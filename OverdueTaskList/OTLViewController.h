@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OTLAddTaskViewController.h"
 
-@interface OTLViewController : UIViewController
+@interface OTLViewController : UIViewController <OTLAddTaskViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *tasks;
+@property (strong, nonatomic) UIBarButtonItem *cancelBarButtonItem;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addTaskBarButtonItem;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
+
+- (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
 
 @end
